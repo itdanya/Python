@@ -1,7 +1,10 @@
 import os
 import time
 import zipfile
+<<<<<<< HEAD
 import sys
+=======
+>>>>>>> 0400d90fcbb0ae1b78327e0debce462248d89cce
 
 # задание переменных
 SRC_DIR = '/home/danya/python' 
@@ -14,6 +17,7 @@ now = time.strftime('%d-%m-%Y')
 
 # прверяем есть ли каталог, который хотим бэкапить
 if not os.path.exists(SRC_DIR):
+<<<<<<< HEAD
     f = open('error.txt', 'w+')
     f.write('Не существует каталога для архивирования - ' + SRC_DIR)
     f.write('\nБэкап не сделан ...')
@@ -30,5 +34,18 @@ else:
     zipp.close()
     f.write('\nБэкап создан в' + ' - ' + str(time.asctime()))
     f.close()
+=======
+    print('Не существует каталога для архивирования - ' + SRC_DIR)
+else:
+    print('Каталог ' + SRC_DIR + ' существет, можем начинать')
+
+zipp=zipfile.ZipFile(DST_DIR + now + '_new.zip','w')
+for root, dirs, files in os.walk(SRC_DIR):
+    for file in files:
+        zipp.write(os.path.join(root, file))
+zipp.close()
+
+
+>>>>>>> 0400d90fcbb0ae1b78327e0debce462248d89cce
 
 
