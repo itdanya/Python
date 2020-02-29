@@ -7,7 +7,7 @@ from email.mime.application import MIMEApplication
 
 
 sender = 'admin@example.com'
-receiver = 'oshkindo@uromgaz.ru'
+receiver = 'info@example.com'
 
 msg = MIMEMultipart()
 
@@ -26,7 +26,7 @@ msg.attach(part)
 user = 'username'
 password = 'password'
 
-with smtplib.SMTP("zimbra.urom.local", 25) as server:
+with smtplib.SMTP("mail.ex.local", 25) as server:
 
 #    server.login(user, password)
     server.sendmail(sender, receiver, msg.as_string())
